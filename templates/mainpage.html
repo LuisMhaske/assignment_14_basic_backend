@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Main Page</h1>
+        <h2>Current Stock Level</h2>
+        <table id="stock-table" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>In Stock</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be dynamically populated here -->
+            </tbody>
+        </table>
+        <h2>Current Account Balance</h2>
+        <p>Account Balance: ${{ account_balance }}</p>
+        <a href="/purchase" class="btn btn-primary">Purchase Form</a>
+        <a href="/sale" class="btn btn-primary">Sale Form</a>
+        <a href="/balance" class="btn btn-primary">Balance Change Form</a>
+        <a href="/history" class="btn btn-primary">History</a>
+    </div>
+</body>
+</html>
