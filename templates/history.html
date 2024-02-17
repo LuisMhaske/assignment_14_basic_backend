@@ -3,13 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History</title>
+    <title>Transaction History</title>
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
 </head>
 <body>
-    <div class="container">
-        <h1>History</h1>
-        <!-- Add content for history display here -->
-    </div>
+<div class="container">
+    <h1>Transaction History</h1>
+    <table id="History" class="table table-striped">
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Transaction Type</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price per Unit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in history %}
+            <tr>
+                <td>{{ transaction.timestamp }}</td>
+                <td>{{ transaction.transaction_type }}</td>
+                <td>{{ transaction.product_name }}</td>
+                <td>{{ transaction.quantity }}</td>
+                <td>{{ transaction.price_per_unit }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form action="/" method="get">
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Home</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>

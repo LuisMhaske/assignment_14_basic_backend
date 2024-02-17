@@ -13,20 +13,28 @@
         <table id="stock-table" class="table table-striped">
             <thead>
                 <tr>
-                    <th>Product</th>
-                    <th>In Stock</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price per Unit</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Table rows will be dynamically populated here -->
+                {% for product, data in inventory.items() %}
+                <tr>
+                    <td>{{ product }}</td>
+                    <td>{{ data.quantity }}</td>
+                    <td>{{ data.price_per_unit }}</td>
+                </tr>
+                {% endfor %}
             </tbody>
         </table>
-        <h2>Current Account Balance</h2>
-        <p>Account Balance: ${{ account_balance }}</p>
-        <a href="/purchase" class="btn btn-primary">Purchase Form</a>
-        <a href="/sale" class="btn btn-primary">Sale Form</a>
-        <a href="/balance" class="btn btn-primary">Balance Change Form</a>
-        <a href="/history" class="btn btn-primary">History</a>
+        <h2>Account Balance: ${{ account_balance }}</h2>
+        <h2>Actions:</h2>
+
+            <a href="/purchase" class="btn btn-primary">Purchase Form</a>
+            <a href="/sale" class="btn btn-primary">Sale Form</a>
+            <a href="/balance" class="btn btn-primary">Balance Change Form</a>
+            <a href="/history" class="btn btn-primary">Transaction History</a>
     </div>
 </body>
 </html>
